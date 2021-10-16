@@ -40,6 +40,10 @@ img {
   border-radius: 15px;
 }
 
+.image:hover {
+  cursor: pointer;
+}
+
 .article {
   padding: 8px;
 }
@@ -72,7 +76,7 @@ img {
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
 }
@@ -80,7 +84,6 @@ img {
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
 }
@@ -93,6 +96,71 @@ img {
 }
 
 .modal-image {
-  max-width: 1200px;
+  max-width: 100%;
   max-height: auto;
+}
+
+.close {
+  float: right;
+  text-align: end;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.left {
+  color: #888;
+  font-size: xx-large;
+  font-weight: 900
+}
+
+.left:link {
+  text-decoration: none;
+}
+
+.left:visited {
+  text-decoration: none;
+}
+
+.left:hover {
+  text-decoration: none;
+  font-weight: bolder !important;
+  color: orange !important;
+}
+
+.right {
+  color: #888;
+  font-size: xx-large;
+  font-weight: 900
+}
+
+.right:link {
+  text-decoration: none;
+}
+
+.right:visited {
+  text-decoration: none;
+}
+
+.right:hover {
+  text-decoration: none;
+  font-weight: bolder !important;
+  color: orange !important;
+}
+
+.left:hover .right:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
