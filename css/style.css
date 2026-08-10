@@ -58,110 +58,264 @@ img {
   margin-bottom: 15px;
 }
 
-/* The Modal (background) */
+/* ---------------------------------------------------------------
+   Lightbox
+   --------------------------------------------------------------- */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; /* app.js schaltet auf display:flex */
+  position: fixed;
+  z-index: 1050;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(17, 17, 19, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  animation: lightbox-fade 0.2s ease-out;
 }
 
-/* Modal Content/Box */
+/* Rahmen ohne eigene Optik: konstante Breite, das Bild traegt die Gestaltung */
 .modal-content {
-  background-color: #fefefeda;
-  margin: 5% auto; /* 15% from the top and centered */
-  padding: 10px;
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
-  border-radius: 10px;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  width: 90vw;
+  width: min(90vw, 1040px);
 }
 
 .modal-image {
-  max-width: 100%;
-  max-height: auto;
+  /* Bild fuellt die feste Rahmenbreite aus; erst wenn es dabei zu hoch
+     wuerde, begrenzt max-height. object-fit haelt das Seitenverhaeltnis. */
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 6px;
+  /* drop-shadow folgt dem sichtbaren Bild, nicht dem Elementkasten */
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.55));
+  animation: lightbox-rise 0.2s ease-out;
+}
+
+/* Bildzaehler, wird von app.js eingehaengt */
+.modal-counter {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* --- Bedienelemente: Schliessen, Vor, Zurueck --- */
+
+.close,
+.left,
+.right {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.close:hover,
+.left:hover,
+.right:hover,
+.close:focus-visible,
+.left:focus-visible,
+.right:focus-visible {
+  background-color: orange;
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.08);
 }
 
 .close {
-  float: right;
-  text-align: end;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+  top: 20px;
+  right: 20px;
+  float: none;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.left,
+.right {
+  top: 50%;
+  margin: 0;
+  /* Glyphe im Markup ausblenden, der Pfeil wird gezeichnet */
+  font-size: 0;
+}
+
+.left {
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.right {
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.left:hover,
+.right:hover,
+.left:focus-visible,
+.right:focus-visible {
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Gezeichnete Chevrons statt der < > Zeichen */
+.left::before,
+.right::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.left::before {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+
+.right::before {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+.left:link,
+.left:visited,
+.right:link,
+.right:visited {
+  text-decoration: none;
 }
 
 .grid-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .grid-item {
   display: flex;
   justify-content: center;
-  margin: auto;
+  align-items: center;
+  min-width: 0;
 }
 
-.left {
-  color: #888;
-  font-size: xx-large;
-  font-weight: 900
+/* Das Bild-Item nimmt die gesamte Rahmenbreite ein; die Pfeile liegen
+   per position:fixed ohnehin ausserhalb des Flusses. */
+.grid-item:nth-child(2) {
+  flex: 1 1 auto;
 }
 
-.left:link {
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-rise {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal-image {
+    animation: none;
+  }
+}
+
+/* Auf schmalen Schirmen ruecken die Bedienelemente enger zusammen */
+@media (max-width: 575.98px) {
+  .modal-content {
+    width: 94vw;
+  }
+
+  .close,
+  .left,
+  .right {
+    width: 38px;
+    height: 38px;
+  }
+
+  .left {
+    left: 8px;
+  }
+
+  .right {
+    right: 8px;
+  }
+
+  .close {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* Einstiegskacheln der Ekranoplan-Uebersicht */
+.project-card {
+  display: block;
+  height: 100%;
+  padding: 16px;
+  color: inherit;
   text-decoration: none;
 }
 
-.left:visited {
+.project-card:hover,
+.project-card:focus {
+  color: inherit;
   text-decoration: none;
 }
 
-.left:hover {
-  text-decoration: none;
-  font-weight: bolder !important;
-  color: orange !important;
+.project-card:hover h3 {
+  color: orange;
 }
 
-.right {
-  color: #888;
-  font-size: xx-large;
-  font-weight: 900
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-.right:link {
-  text-decoration: none;
+.breadcrumb-nav {
+  font-weight: bolder;
 }
 
-.right:visited {
+.breadcrumb-nav a:hover {
+  color: orange;
   text-decoration: none;
-}
-
-.right:hover {
-  text-decoration: none;
-  font-weight: bolder !important;
-  color: orange !important;
-}
-
-.left:hover .right:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }

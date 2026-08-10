@@ -1,47 +1,42 @@
-// Get the modal
-var modal = document.getElementById("myModal");
-
-
-
-var hw1 = [
-  "/images/ekranoplan/HW-1/hw11.jpg",
-  "/images/ekranoplan/HW-1/hw12.jpg",
-  "/images/ekranoplan/HW-1/hw13.jpg",
-  "/images/ekranoplan/HW-1/hw14.jpg",
-]
-
-var hw2 = [
-  "/images/ekranoplan/HW-2/ek1.jpeg",
-  "/images/ekranoplan/HW-2/ek2.jpeg",
-  "/images/ekranoplan/HW-2/ek3.jpeg",
-  "/images/ekranoplan/HW-2/ek6.jpeg",
-  "/images/ekranoplan/HW-2/ek7.jpeg",
-  "/images/ekranoplan/HW-2/ek10.jpeg",
-  "/images/ekranoplan/HW-2/ek11.jpeg",
-  "/images/ekranoplan/HW-2/ek12.jpeg",
-  "/images/ekranoplan/HW-2/ek13.jpeg",
-  "/images/ekranoplan/HW-2/hw21.jpg",
-  "/images/ekranoplan/HW-2/hw22.jpg",
-  "/images/ekranoplan/HW-2/hw23.jpg",
-  "/images/ekranoplan/HW-2/hw24.jpg",
-  "/images/ekranoplan/HW-2/hw25.jpg",
-  "/images/ekranoplan/HW-2/hw26.jpg",
-]
-
-var hw3 = [
-  "/images/ekranoplan/HW-3/hw31.jpg",
-  "/images/ekranoplan/HW-3/hw32.jpg",
-  "/images/ekranoplan/HW-3/hw33.jpg",
-  "/images/ekranoplan/HW-3/hw34.jpg",
-  "/images/ekranoplan/HW-3/hw35.jpg",
-  "/images/ekranoplan/HW-3/hw36.jpg",
-  "/images/ekranoplan/HW-3/hw37.jpg",
-  "/images/ekranoplan/HW-3/hw38.jpg",
-  "/images/ekranoplan/HW-3/wh39.jpg",
-  "/images/ekranoplan/HW-3/hw310.jpg",
-]
-
-var hwAll = hw1.concat(hw2).concat(hw3);
+// Bildergalerien der Ekranoplan-Unterseiten.
+// Schluessel = CSS-Klasse des Platzhalter-Divs auf der jeweiligen Seite.
+var galleries = {
+  ".hw1": [
+    "/images/ekranoplan/HW-1/hw11.jpg",
+    "/images/ekranoplan/HW-1/hw12.jpg",
+    "/images/ekranoplan/HW-1/hw13.jpg",
+    "/images/ekranoplan/HW-1/hw14.jpg",
+  ],
+  ".hw2": [
+    "/images/ekranoplan/HW-2/ek1.jpeg",
+    "/images/ekranoplan/HW-2/ek2.jpeg",
+    "/images/ekranoplan/HW-2/ek3.jpeg",
+    "/images/ekranoplan/HW-2/ek6.jpeg",
+    "/images/ekranoplan/HW-2/ek7.jpeg",
+    "/images/ekranoplan/HW-2/ek10.jpeg",
+    "/images/ekranoplan/HW-2/ek11.jpeg",
+    "/images/ekranoplan/HW-2/ek12.jpeg",
+    "/images/ekranoplan/HW-2/ek13.jpeg",
+    "/images/ekranoplan/HW-2/hw21.jpg",
+    "/images/ekranoplan/HW-2/hw22.jpg",
+    "/images/ekranoplan/HW-2/hw23.jpg",
+    "/images/ekranoplan/HW-2/hw24.jpg",
+    "/images/ekranoplan/HW-2/hw25.jpg",
+    "/images/ekranoplan/HW-2/hw26.jpg",
+  ],
+  ".hw3": [
+    "/images/ekranoplan/HW-3/hw31.jpg",
+    "/images/ekranoplan/HW-3/hw32.jpg",
+    "/images/ekranoplan/HW-3/hw33.jpg",
+    "/images/ekranoplan/HW-3/hw34.jpg",
+    "/images/ekranoplan/HW-3/hw35.jpg",
+    "/images/ekranoplan/HW-3/hw36.jpg",
+    "/images/ekranoplan/HW-3/hw37.jpg",
+    "/images/ekranoplan/HW-3/hw38.jpg",
+    "/images/ekranoplan/HW-3/wh39.jpg",
+    "/images/ekranoplan/HW-3/hw310.jpg",
+  ],
+};
 
 function createImageGallery(paths, entry) {
   var entryDiv = document.querySelector(entry);
@@ -50,68 +45,130 @@ function createImageGallery(paths, entry) {
   entryDiv.appendChild(row);
   paths.forEach((path) => {
     var col = document.createElement('div');
-    col.className = 'col-3';
+    col.className = 'col-6 col-md-3';
     row.appendChild(col);
     var article = document.createElement('div');
     article.className = 'article text-center mb-4';
     col.appendChild(article);
     let img = document.createElement('img');
     img.className = 'image';
+    img.loading = 'lazy';
     img.src = path;
     article.appendChild(img);
   })
 }
 
-if (null !== document.querySelector('.hw1')) {
-  createImageGallery(hw1, '.hw1');
-}
-
-if (null !== document.querySelector('.hw2')) {
-  createImageGallery(hw2, '.hw2');
-}
-
-if (null !== document.querySelector('.hw3')) {
-  createImageGallery(hw3, '.hw3');
-}
-
-// Get the button that opens the modal
-document.querySelectorAll('.image').forEach(item => {
-  // When the user clicks on the button, open the modal
-  item.addEventListener('click', event => {
-    modal.style.display = "block";
-    var src = item.src;
-    modal.querySelector('.modal-image').src = src;  
-  });
+Object.keys(galleries).forEach((entry) => {
+  if (null !== document.querySelector(entry)) {
+    createImageGallery(galleries[entry], entry);
+  }
 });
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// Lightbox. Blaettert durch alle .image-Elemente der aktuellen Seite.
+var modal = document.getElementById("myModal");
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+if (null !== modal) {
+  var modalImage = modal.querySelector('.modal-image');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  // Bildzaehler wird zur Laufzeit eingehaengt, damit keine Seite Markup braucht
+  var counter = document.createElement('div');
+  counter.className = 'modal-counter';
+  modal.appendChild(counter);
+
+  function pageImages() {
+    return Array.from(document.querySelectorAll('.image')).map(img => img.src);
   }
+
+  function currentPos(images) {
+    return images.indexOf(modalImage.src);
+  }
+
+  function updateCounter() {
+    var images = pageImages();
+    var pos = currentPos(images);
+    counter.textContent = images.length > 1 && pos !== -1
+      ? (pos + 1) + ' / ' + images.length
+      : '';
+  }
+
+  function showImageAt(offset) {
+    var images = pageImages();
+    if (images.length === 0) {
+      return;
+    }
+    var pos = currentPos(images);
+    var nextPos = (pos + offset + images.length) % images.length;
+    modalImage.src = images[nextPos];
+    updateCounter();
+  }
+
+  function openModal(src) {
+    modalImage.src = src;
+    modal.style.display = "flex";
+    // verhindert, dass die Seite hinter der Lightbox mitscrollt
+    document.body.style.overflow = 'hidden';
+    updateCounter();
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = '';
+  }
+
+  function isOpen() {
+    return modal.style.display === "flex";
+  }
+
+  document.querySelectorAll('.image').forEach(item => {
+    item.addEventListener('click', event => {
+      openModal(item.src);
+    });
+  });
+
+  var close = modal.querySelector('.close');
+  if (null !== close) {
+    close.addEventListener('click', closeModal);
+    close.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+  }
+
+  // Jeder Klick, der weder Bild noch Bedienelement trifft, schliesst die Lightbox
+  modal.addEventListener('click', (e) => {
+    if (null === e.target.closest('.modal-image, .close, .left, .right')) {
+      closeModal();
+    }
+  });
+
+  var right = modal.querySelector('.right');
+  if (null !== right) {
+    right.addEventListener('click', (e) => {
+      e.preventDefault();
+      showImageAt(1);
+    });
+  }
+
+  var left = modal.querySelector('.left');
+  if (null !== left) {
+    left.addEventListener('click', (e) => {
+      e.preventDefault();
+      showImageAt(-1);
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!isOpen()) {
+      return;
+    }
+    if (e.key === 'Escape') {
+      closeModal();
+    } else if (e.key === 'ArrowRight') {
+      showImageAt(1);
+    } else if (e.key === 'ArrowLeft') {
+      showImageAt(-1);
+    }
+  });
 }
-
-
-document.querySelector('.right').addEventListener('click', (e) => {
-  let modalImage = document.querySelector('.modal-image');
-  let imagePath = modalImage.getAttribute("src").substring(modalImage.getAttribute("src").indexOf('/images/')+1)
-  let pos = hwAll.indexOf('/'+imagePath);
-  let nextPos = (pos+1)%hwAll.length;
-  modalImage.src = hwAll[nextPos];
-})
-
-document.querySelector('.left').addEventListener('click', (e) => {
-  let modalImage = document.querySelector('.modal-image');
-  let imagePath = modalImage.getAttribute("src").substring(modalImage.getAttribute("src").indexOf('/images/')+1)
-  let pos = hwAll.indexOf('/'+imagePath);
-  let nextPos = pos-1  === -1 ? hwAll.length-1 : pos-1;
-  modalImage.src = hwAll[nextPos];
-})
