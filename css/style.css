@@ -156,9 +156,30 @@ img {
   float: none;
   margin: 0;
   padding: 0;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1;
+  /* Glyphe im Markup ausblenden, das Kreuz wird gezeichnet.
+     Ein &times; sitzt in seiner Zeile nicht mittig und laesst sich
+     per Flexbox deshalb nicht sauber zentrieren. */
+  font-size: 0;
+}
+
+.close::before,
+.close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  margin: -1px 0 0 -8px;
+  background-color: currentColor;
+}
+
+.close::before {
+  transform: rotate(45deg);
+}
+
+.close::after {
+  transform: rotate(-45deg);
 }
 
 .left,
@@ -301,8 +322,36 @@ img {
   text-decoration: none;
 }
 
-.project-card:hover h3 {
+/* Ueberschrift traegt die Linkfarbe, damit die Kachel als Link lesbar ist.
+   #007bff ist die Linkfarbe von Bootstrap 4, also dieselbe wie bei den
+   uebrigen Links der Seite. */
+.project-card h3 {
+  display: inline-flex;
+  align-items: center;
+  color: #007bff;
+  transition: color 0.15s ease;
+}
+
+/* Gezeichneter Pfeil als Hinweis, dass sich die Unterseite oeffnet */
+.project-card h3::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-left: 0.5rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: margin-left 0.15s ease;
+}
+
+.project-card:hover h3,
+.project-card:focus h3 {
   color: orange;
+}
+
+.project-card:hover h3::after,
+.project-card:focus h3::after {
+  margin-left: 0.8rem;
 }
 
 .project-card img {
