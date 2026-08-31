@@ -687,3 +687,25 @@ img {
   white-space: nowrap;
   pointer-events: none;
 }
+
+/* ---------------------------------------------------------------
+   Navigation auf schmalen Schirmen
+   Unter lg fuehrt ein einziger Umschalter beide Menuegruppen. Die
+   zweite Leiste steht dann nicht mehr als eigene Zeile im Weg.
+   --------------------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .navbar-sections {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* Menuepunkte bekommen im aufgeklappten Menue Zeilenhoehe statt der
+     waagerechten Abstaende, die nur nebeneinander Sinn ergeben. */
+  .navbar-collapse .nav-link {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

@@ -24,14 +24,14 @@
             class="navbar-toggler"
             type="button"
             data-toggle="collapse"
-            data-target="#nav1"
-            aria-controls="nav1"
+            data-target=".js-mainnav"
+            aria-controls="nav1 nav2"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="nav1">
+          <div class="collapse navbar-collapse js-mainnav" id="nav1">
             <div class="navbar-nav ml-auto">
               <a class="nav-item nav-link px-3" href="imprint.html">Kontakt</a>
               <a class="nav-item nav-link px-3" href="imprint.html"
@@ -42,19 +42,8 @@
         </nav>
       </div>
       <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#nav2"
-            aria-controls="nav2"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="nav2">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-sections">
+          <div class="collapse navbar-collapse js-mainnav" id="nav2">
             <div class="navbar-nav">
               <a class="nav-item nav-link pr-4" href="index.html"
                 >Ekranoplan</a
@@ -90,9 +79,36 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <div class="article text-center mb-4">
               <h3>Umbau Blanik</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="article text-center mb-4">
+              <img
+                class="image"
+                loading="lazy"
+                src="/images/hobbys/blanik.jpg"
+                alt="Blanik-Segelflugzeug mit angebautem Motor und Propeller"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="article">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                  src="https://www.youtube.com/embed/jxt3ES8MDEY?rel=0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
               <p>
                 Umbau eines
                 <a target="_blank" href="https://de.wikipedia.org/wiki/Let_L-13"
@@ -101,69 +117,6 @@
                 Segelflugzeuges zu einem Motorsegler mit speziell angefertigtem
                 Motor.
               </p>
-              <img
-                class="image"
-                src="/images/blanik.jpg"
-                alt="LKW mit maßgefertigtem Windschild"
-              />
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="788.54"
-                height="443"
-                type="text/html"
-                src="https://www.youtube.com/embed/jxt3ES8MDEY?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="row spacer">
-          <div class="col-12">
-            <hr class="short-line" />
-          </div>
-        </div>
-
-        <div class="row h-100 align-items-center">
-          <div class="col-6">
-            <div class="article text-center mb-4">
-              <h3>Maßanfertigung LKW-Windschild</h3>
-              <div class="image-container">
-                <img
-                  class="image"
-                  height="220"
-                  width="370"
-                  src="/images/lkw_windschild.jpg"
-                  alt="LKW mit maßgefertigtem Windschild"
-                />
-                <img
-                  class="image"
-                  height="220"
-                  width="370"
-                  src="/images/Windschild_fertigung.jpg"
-                  alt="Windschild"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="788.54"
-                height="443"
-                type="text/html"
-                src="https://www.youtube.com/embed/sBB5z5I3kQ0?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-              ></iframe>
             </div>
           </div>
         </div>
@@ -175,27 +128,79 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Maßanfertigung LKW-Windschild</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="article text-center mb-4">
+              <img
+                class="image"
+                loading="lazy"
+                src="/images/hobbys/lkw-windschild.jpg"
+                alt="LKW mit maßgefertigtem Windschild"
+              />
+              <p class="mt-2">Fertiges Windschild am Fahrzeug</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="article">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                  src="https://www.youtube.com/embed/sBB5z5I3kQ0?rel=0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 mx-auto">
+            <div class="article text-center">
+              <img
+                class="image"
+                loading="lazy"
+                src="/images/hobbys/windschild-fertigung.jpg"
+                alt="Windschild während der Fertigung auf der Helling"
+              />
+              <p class="mt-2">Aufbau des Windschilds während der Fertigung</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
             <div class="article text-center mb-4">
               <h3>Agrar-Aeromobil</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center mb-4">
               <p>
                 Experimenteller Entwurf eines Ultraleichtfahrzeugs für das
                 Besprühen von Feldern mit Propellerantrieb.
               </p>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-lg-8 mx-auto">
             <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="788.54"
-                height="443"
-                type="text/html"
-                src="https://www.youtube.com/embed/zhxfXhQB9Yg?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-              ></iframe>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                  src="https://www.youtube.com/embed/zhxfXhQB9Yg?rel=0"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -218,14 +223,14 @@
               <img
                 class="image"
                 loading="lazy"
-                src="/images/katamaran_form.jpg"
+                src="/images/hobbys/katamaran-rumpf-werkstatt.jpg"
                 alt="Integraler Katamaran-Rumpf in der Werkstatt"
               />
             </div>
           </div>
           <div class="col-12 col-lg-6">
             <div class="article mb-4">
-              <div class="embed-responsive embed-responsive-4by3">
+              <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                   class="embed-responsive-item"
                   loading="lazy"
@@ -311,24 +316,27 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <div class="article text-center mb-4">
               <h3>Barnaul - Motorsport Club</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center mb-4">
               <p>Verschiedene Rennboote aus dem Motorsportclub Barnaul.</p>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-lg-8 mx-auto">
             <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="788.54"
-                height="443"
-                type="text/html"
-                src="https://www.youtube.com/embed/I3xKJod-Dhw?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-              ></iframe>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                  src="https://www.youtube.com/embed/I3xKJod-Dhw?rel=0"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -340,24 +348,27 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <div class="article text-center mb-4">
               <h3>Agrar-Drachenflugzeug</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center mb-4">
               <p>Bau eines Drachenflugzeugs für das Besprühen von Feldern.</p>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-lg-8 mx-auto">
             <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="788.54"
-                height="443"
-                type="text/html"
-                src="https://www.youtube.com/embed/8QvbbKE6V4M?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-              ></iframe>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  loading="lazy"
+                  frameborder="0"
+                  allowfullscreen
+                  src="https://www.youtube.com/embed/8QvbbKE6V4M?rel=0"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -387,7 +398,7 @@
           </div>
           <div class="col-12 col-lg-6">
             <div class="article mb-4">
-              <div class="embed-responsive embed-responsive-4by3">
+              <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                   class="embed-responsive-item"
                   loading="lazy"
