@@ -83,6 +83,15 @@ if (null !== modal) {
     return images.indexOf(modalImage.src);
   }
 
+  // Bilder, die als KI-generierte Konzeptvision gekennzeichnet werden.
+  // Der Hinweis wird in der Lightbox per Klasse am Modal eingeblendet.
+  var aiImages = ['tandem-ekranoplan-render.jpg'];
+
+  function updateAiNote() {
+    var isAi = aiImages.some(name => modalImage.src.indexOf(name) !== -1);
+    modal.classList.toggle('is-ai', isAi);
+  }
+
   function updateCounter() {
     var images = pageImages();
     var pos = currentPos(images);
@@ -100,6 +109,7 @@ if (null !== modal) {
     var nextPos = (pos + offset + images.length) % images.length;
     modalImage.src = images[nextPos];
     updateCounter();
+    updateAiNote();
   }
 
   function openModal(src) {
@@ -108,6 +118,7 @@ if (null !== modal) {
     // verhindert, dass die Seite hinter der Lightbox mitscrollt
     document.body.style.overflow = 'hidden';
     updateCounter();
+    updateAiNote();
   }
 
   function closeModal() {
@@ -171,4 +182,11 @@ if (null !== modal) {
       showImageAt(-1);
     }
   });
+}
+
+// Jahreszahl im Footer aktuell halten. Ohne JavaScript bleibt der im
+// Markup hinterlegte Wert stehen, die Zeile ist also nie leer.
+var footerYear = document.getElementById('footer-year');
+if (null !== footerYear) {
+  footerYear.textContent = new Date().getFullYear();
 }

@@ -1,17 +1,76 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
+/* Sticky Footer per Flexbox: main waechst, der Footer sitzt am
+   Seitenende, ohne dass seine Hoehe irgendwo fest hinterlegt sein muss. */
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+main {
+  flex: 1 0 auto;
+}
+
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #dbdbdb;
+  flex-shrink: 0;
+  padding-top: 40px;
+  border-top: 3px solid orange;
+  background-color: #23262b;
+  color: #c8ccd2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #c8ccd2;
+}
+
+footer a:hover,
+footer a:focus {
+  color: orange;
+  text-decoration: none;
+}
+
+.footer-name {
+  margin-bottom: 0.35rem;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+
+.footer-tagline {
+  margin-bottom: 0;
+  color: #9aa1aa;
+}
+
+.footer-head {
+  margin-bottom: 0.6rem;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: bolder;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.35rem;
+}
+
+.footer-bottom {
+  margin-top: 32px;
+  padding: 16px 0;
+  border-top: 1px solid #343841;
+  color: #8a919b;
+  font-size: 0.82rem;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 .row {
@@ -549,4 +608,82 @@ img {
   background: none;
   color: orange;
   font-weight: bolder;
+}
+
+/* ---------------------------------------------------------------
+   Seitenabschluss
+   Eine hervorgehobene Hauptaktion, darunter die Nebenwege nebeneinander
+   statt untereinander gestapelt.
+   --------------------------------------------------------------- */
+
+.page-end-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  font-size: 0.92rem;
+}
+
+.page-end-links li {
+  padding: 0.15rem 1.1rem;
+}
+
+.page-end-links li + li {
+  border-left: 1px solid #dbdbdb;
+}
+
+/* Auf schmalen Schirmen stehen die Links untereinander, ein Trenner am
+   Zeilenanfang waere dort sinnlos. */
+@media (max-width: 575.98px) {
+  .page-end-links li + li {
+    border-left: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Kennzeichnung KI-generierter Konzeptvisualisierungen
+   Der Hinweis liegt als Pseudoelement ueber dem Bild, die Bilddatei
+   selbst bleibt unveraendert.
+   --------------------------------------------------------------- */
+
+.ai-note {
+  position: relative;
+  display: block;
+  width: -webkit-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  /* entfernt den Zeilenabstand unter dem Bild, damit die Plakette
+     buendig in der unteren Bildkante sitzt */
+  line-height: 0;
+}
+
+/* In den Projektkacheln fuellt das Bild die volle Spaltenbreite */
+.project-card .ai-note {
+  width: 100%;
+}
+
+/* In der Lightbox traegt das Bild-Item den Hinweis */
+.modal.is-ai .grid-item:nth-child(2) {
+  position: relative;
+}
+
+.ai-note::after,
+.modal.is-ai .grid-item:nth-child(2)::after {
+  content: "Konzeptvision | KI-generiert";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
 }
