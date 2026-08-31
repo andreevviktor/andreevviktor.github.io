@@ -360,6 +360,86 @@ img {
   object-fit: cover;
 }
 
+/* ---------------------------------------------------------------
+   Konzeptseite: Fliesstext, Sprungmarken, Hinweise, Variantenkacheln
+   --------------------------------------------------------------- */
+
+/* Laengerer Fliesstext liest sich linksbuendig besser als zentriert.
+   Die Ueberschriften bleiben zentriert wie auf den uebrigen Seiten. */
+.prose {
+  text-align: left;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose p:last-child,
+.prose ul:last-child,
+.prose ol:last-child {
+  margin-bottom: 0;
+}
+
+/* Sprungmarken am Seitenanfang */
+.toc {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin: 0.25rem 0.75rem;
+}
+
+/* Einschraenkender Hinweis, farblich an die orange Trennlinie angelehnt */
+.note {
+  padding: 12px 16px;
+  border-left: 3px solid orange;
+  border-radius: 0 10px 10px 0;
+  background-color: #f6f6f6;
+}
+
+/* Wechsel zwischen Konzept- und Umsetzungsseite.
+   Orange wie die Trennlinien, damit der Weiterweg nicht als normaler
+   Fliesstext-Link untergeht. */
+.btn-accent {
+  padding: 0.6rem 1.75rem;
+  border: 2px solid orange;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #212529;
+  font-weight: bolder;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: orange;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Kacheln der Energiearchitektur-Varianten */
+.variant-card {
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+}
+
+.variant-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
 .breadcrumb-nav {
   font-weight: bolder;
 }
@@ -367,4 +447,66 @@ img {
 .breadcrumb-nav a:hover {
   color: orange;
   text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   Seite mit Projekten anderer Konstrukteure
+   --------------------------------------------------------------- */
+
+/* Hinweis auf die fremde Urheberschaft. Bewusst kraeftiger als .note,
+   damit er nicht als Randbemerkung gelesen wird. */
+.disclaimer {
+  padding: 16px 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: #fff8ec;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Quellenangabe unter jedem Fremdprojekt */
+.source {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.source ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.source li {
+  margin-bottom: 0.35rem;
+}
+
+/* Einstieg am Ende der Uebersicht. Gestrichelter Rahmen statt der
+   Optik der Projektkacheln, weil hier fremde Arbeiten folgen. */
+.external-note {
+  display: block;
+  padding: 20px;
+  border: 1px dashed #b0b0b0;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.external-note:hover,
+.external-note:focus {
+  border-color: orange;
+  color: inherit;
+  text-decoration: none;
+}
+
+.external-note h3 {
+  font-size: 1.35rem;
+  color: #007bff;
+  transition: color 0.15s ease;
+}
+
+.external-note:hover h3,
+.external-note:focus h3 {
+  color: orange;
 }
