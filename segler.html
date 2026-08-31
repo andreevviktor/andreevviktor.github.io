@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio" />
+    <meta name="description" content="Abnehmbare elektrische Antriebseinheit für Standardsegelflugzeuge – modulare Faserverbund-Motorgondel mit Elektromotor, Akku und Klappluftschraube" />
     <meta name="author" content="Viktor Andreev" />
-    <title>Portfolio Viktor Andreev</title>
+    <title>Abnehmbare elektrische Antriebseinheit – Portfolio Viktor Andreev</title>
     <!-- Bootstrap core CSS -->
     <link
       rel="stylesheet"
@@ -19,7 +19,7 @@
     <header>
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light mt-4">
-          <a class="navbar-brand ml-2" href="#">Viktor Andreev</a>
+          <a class="navbar-brand ml-2" href="index.html">Viktor Andreev</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -56,9 +56,7 @@
           </button>
           <div class="collapse navbar-collapse" id="nav2">
             <div class="navbar-nav">
-              <a class="nav-item nav-link pr-4" href="index.html"
-                >Ekranoplan</a
-              >
+              <a class="nav-item nav-link pr-4" href="index.html">Ekranoplan</a>
               <a class="nav-item nav-link px-4 active" href="segler.html"
                 >Motorsegler</a
               >
@@ -81,7 +79,8 @@
         <div class="row">
           <div class="col mt-4">
             <div class="text-center">
-              <h1>Umbau eines Segelflugzeugs zu einem Motorsegler</h1>
+              <h1>Abnehmbare elektrische Antriebseinheit</h1>
+              <p class="lead-sub">für Standardsegelflugzeuge</p>
               <div class="spacer">
                 <hr class="short-line" />
               </div>
@@ -89,17 +88,32 @@
           </div>
         </div>
 
-        <div class="row h-100 align-items-center">
-          <div class="col-12 h-100">
-            <div class="article text-center mb-4">
-              <h3>Konzept zum Umbau eines Segelflugzeugs zu einem Motorsegler</h3>
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
+              <p>
+                Eine modulare, leichte Motorgondel, die ein serienmäßiges
+                Segelflugzeug bei Bedarf mit einem elektrischen Antrieb
+                ausrüstet &ndash; und sich rückstandslos wieder abnehmen lässt,
+                ohne die Primärstruktur des Flugzeugs zu verändern.
+              </p>
             </div>
           </div>
-          <div class="col-12">
-            <div class="article">
-              <img src="images/segler/konzept.jpeg" alt="konzept">
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
+              <img
+                class="image"
+                src="images/segler/motorsegler-render.jpg"
+                alt="Segelflugzeug mit abnehmbaren Motorgondeln auf den Tragflächen"
+              />
+              <p class="mt-2">
+                Standardsegelflugzeug mit montierten Antriebsmodulen
+              </p>
             </div>
-          </div> 
+          </div>
         </div>
 
         <div class="row spacer">
@@ -108,17 +122,555 @@
           </div>
         </div>
 
-        <div class="row h-100 align-items-center">
-          <div class="col-12 h-100">
+        <!-- Sprungmarken -->
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
             <div class="article">
-              <img src="images/segler/Motorhalterung.png" alt="Motorhalterung">
-              <div class="article text-center mb-4">
-                <h4>Abnehmbarer Motorblock samt Steuerung und Akku</h4>
+              <ul class="toc">
+                <li><a href="#konzept">Projektkonzept</a></li>
+                <li><a href="#anpassung">Typspezifische Anpassung</a></li>
+                <li><a href="#gondel">Konstruktion der Motorgondel</a></li>
+                <li><a href="#luftschraube">Klappluftschraube</a></li>
+                <li><a href="#ansteuerung">Ansteuerung</a></li>
+                <li><a href="#modul">Modulares Systemkonzept</a></li>
+                <li><a href="#cad">CAD-Konstruktion</a></li>
+                <li><a href="#fertigung">Fertigungstechnologie</a></li>
+                <li><a href="#aufgaben">Entwicklungsaufgaben</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Projektkonzept -->
+        <div class="row" id="konzept">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Projektkonzept</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Das Projekt umfasst die Entwicklung einer modularen, leichten
+                und abnehmbaren elektrischen Antriebseinheit für
+                Seriensegelflugzeuge, die ohne wesentliche konstruktive
+                Veränderungen am bestehenden Flugzeug installiert werden kann.
+              </p>
+              <p>
+                Das Grundprinzip besteht darin, ein Standardsegelflugzeug bei
+                Bedarf mit einer speziell für den jeweiligen Flugzeugtyp
+                entwickelten abnehmbaren Motorgondel auszurüsten. In dieser
+                Gondel sind sämtliche wesentlichen Komponenten des elektrischen
+                Antriebssystems integriert:
+              </p>
+              <ul>
+                <li>Traktionselektromotor;</li>
+                <li>Akkumulator beziehungsweise Batteriepack;</li>
+                <li>elektronischer Drehzahlsteller (ESC);</li>
+                <li>Klappluftschraube;</li>
+                <li>Motorträger und tragende Strukturelemente;</li>
+                <li>elektrische Verkabelung und Schaltkomponenten;</li>
+                <li>gegebenenfalls Kühlungs- und Schutzsysteme.</li>
+              </ul>
+              <p>
+                Nach der Montage ermöglicht die Motorgondel den eigenständigen
+                motorisierten Flug beziehungsweise den Einsatz des Antriebs zur
+                Unterstützung bei Start und Steigflug. Nach dem Abnehmen kann
+                das Segelflugzeug wieder in seinen ursprünglichen Zustand
+                versetzt werden.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <div class="note prose">
+                <p>
+                  Das Konzept beruht damit auf dem Prinzip eines austauschbaren
+                  Antriebsmoduls bei minimalem Eingriff in die Primärstruktur
+                  des Segelflugzeugs.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Typspezifische Anpassung -->
+        <div class="row" id="anpassung">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Typspezifische Anpassung</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Motorgondel wird individuell für den jeweiligen
+                Segelflugzeugtyp konstruiert. Bei der Auslegung werden
+                insbesondere folgende Parameter berücksichtigt:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>Flügelgeometrie;</li>
+                    <li>Flügelprofil und Profildicke;</li>
+                    <li>Aufbau und Lage der tragenden Strukturelemente;</li>
+                    <li>Position des Holmbereichs;</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>lokale Belastbarkeit der Flügelstruktur;</li>
+                    <li>aerodynamische Randbedingungen;</li>
+                    <li>Schwerpunktlage;</li>
+                    <li>zulässige zusätzliche Lasten.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Befestigungs- und Auflageelemente werden so ausgelegt, dass
+                möglichst vorhandene tragende Strukturen des Flugzeugs genutzt
+                werden. Dadurch bleibt die erforderliche Modifikation des
+                Segelflugzeugs minimal &ndash; der überwiegende konstruktive
+                Aufwand liegt in der abnehmbaren Antriebseinheit selbst.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Konstruktion der Motorgondel -->
+        <div class="row" id="gondel">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Konstruktion der Motorgondel</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center mb-4">
+              <img
+                class="image"
+                loading="lazy"
+                src="images/segler/motorgondel-cad.jpg"
+                alt="CAD-Modell der Motorgondel mit Flügelanbindung, Elektromotor und Klappluftschraube"
+              />
+              <p class="mt-2">
+                CAD-Modell: äußere Geometrie, Anbindung an den Flügel sowie
+                Integration von Elektromotor und Luftschraube
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Motorgondel ist als aerodynamisch optimierte
+                Leichtbaukonstruktion ausgeführt. Ziel ist eine möglichst
+                geringe Masse bei gleichzeitig ausreichender Steifigkeit,
+                Festigkeit und Formstabilität. Als Werkstoff sind
+                faserverstärkte Polymerverbundwerkstoffe vorgesehen,
+                insbesondere glas- und kohlenstofffaserverstärkte Kunststoffe
+                (GFK/CFK) mit Epoxidharzmatrix.
+              </p>
+              <p>
+                Der Rumpf der Gondel besteht aus zwei Schalen &ndash; einer
+                oberen und einer unteren. Die Trennebene verläuft im Bereich der
+                Hinterkante. Diese Teilung ermöglicht guten Zugang zu den innen
+                angeordneten Komponenten und vereinfacht Fertigung, Montage,
+                Wartung und Reparatur. Im Inneren sind unter anderem Akku,
+                Elektromotor und Drehzahlsteller sowie die erforderlichen
+                elektrischen und strukturellen Komponenten angeordnet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Klappluftschraube -->
+        <div class="row" id="luftschraube">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Klappluftschraube</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Zur Minimierung des aerodynamischen Widerstands im motorlosen
+                Flug ist eine Klappluftschraube vorgesehen. Beim Anlaufen des
+                Elektromotors schwenken die Blätter durch die entstehenden
+                Fliehkräfte selbsttätig in die Arbeitsstellung. Bei
+                stillstehendem Motor hält sie ein Federelement in der angelegten
+                Position.
+              </p>
+              <p>
+                Ein separater Stellmechanismus zum Aus- und Einklappen entfällt
+                dadurch vollständig. Im eingefalteten Zustand liegen die Blätter
+                strömungsgünstig an der Motorgondel an, was Stirnfläche und
+                parasitären Widerstand während des Segelflugs reduziert.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Ansteuerung -->
+        <div class="row" id="ansteuerung">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Ansteuerung des Antriebssystems</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Steuerung des Elektromotors erfolgt aus dem Cockpit des
+                Segelflugzeugs. Die Hochstrom- beziehungsweise
+                Leistungselektrik bleibt dabei in jedem Fall vollständig
+                innerhalb der abnehmbaren Motorgondel. Für die Signalübertragung
+                stehen zwei Varianten zur Wahl:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Steuerkabel</h4>
+                  <p>
+                    Das Steuersignal wird über ein dünnes Kabel übertragen.
+                    Erforderlich wäre lediglich eine kleine Durchführung durch
+                    die Flügelbeplankung.
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Drahtlose Ansteuerung</h4>
+                  <p>
+                    Die Steuerung erfolgt über ein Sender-Empfänger-System. Es
+                    besteht dann keinerlei mechanische oder elektrische
+                    Verbindung zwischen Cockpit und Motorgondel. Diese Variante
+                    ist hinsichtlich der Rückrüstbarkeit im Vorteil, da selbst
+                    die Kabeldurchführung in der Flügelbeplankung entfällt.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Modulares Systemkonzept -->
+        <div class="row" id="modul">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Modulares Systemkonzept</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Ein wesentliches Merkmal des Projekts ist die funktionale
+                Trennung zwischen Segelflugzeug und Antriebseinheit:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Basismodul</h4>
+                  <p>
+                    Serienmäßiges Segelflugzeug, dessen ursprüngliche
+                    Konstruktion weitgehend unverändert bleibt.
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Antriebsmodul</h4>
+                  <p>
+                    Abnehmbare Motorgondel mit vollständig integrierter
+                    elektrischer Antriebseinheit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Dadurch lässt sich dasselbe Grundkonzept auf unterschiedliche
+                Segelflugzeugtypen übertragen. Anzupassen sind im Wesentlichen
+                die äußere Geometrie der Gondel sowie ihre Befestigungs- und
+                Anschlussstrukturen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- CAD-Konstruktion -->
+        <div class="row" id="cad">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>CAD-Konstruktion</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Entwicklung erfolgt auf Basis eines dreidimensionalen
+                parametrischen CAD-Modells. Ausgelegt werden darin unter
+                anderem:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>aerodynamische Außenkontur der Motorgondel;</li>
+                    <li>Übergang zwischen Motorgondel und Flügel;</li>
+                    <li>Position und Befestigung des Elektromotors;</li>
+                    <li>Aufnahme der Luftschraube;</li>
+                    <li>Bauraum für den Akku;</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>Einbauposition des Drehzahlstellers;</li>
+                    <li>tragende Strukturelemente;</li>
+                    <li>Teilung in obere und untere Schale;</li>
+                    <li>Befestigungs- und Wartungselemente.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die parametrische Konstruktion ermöglicht eine vergleichsweise
+                schnelle Anpassung der Gondel an unterschiedliche
+                Segelflugzeugtypen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Fertigungstechnologie -->
+        <div class="row" id="fertigung">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Fertigungstechnologie</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die Herstellung ist als Faserverbund-Leichtbaukonstruktion
+                vorgesehen. Je nach erforderlicher Festigkeit, Steifigkeit und
+                Bauteilmasse kommen infrage:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Werkstoffe</h4>
+                  <ul>
+                    <li>Glasfasergewebe und GFK;</li>
+                    <li>Kohlenfasergewebe und CFK;</li>
+                    <li>Hybridlaminate;</li>
+                    <li>Epoxidharzsysteme;</li>
+                    <li>Sandwichbauweise mit leichtem Kernmaterial.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Verfahren</h4>
+                  <ul>
+                    <li>Vakuumlaminieren;</li>
+                    <li>Vakuuminfusion;</li>
+                    <li>Negativformen und Formenbau;</li>
+                    <li>3D-gedruckte Urmodelle und Hilfsvorrichtungen.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Faserverbundwerkstoffe ermöglichen eine leichte, steife und
+                aerodynamisch präzise Außenhaut mit komplexer Geometrie. Diese
+                Verfahren sind an konkreten Bauteilen in der
+                <a href="ekranoplan-tandem-umsetzung.html"
+                  >Umsetzung des Tandem-Ekranoplans</a
+                >
+                dokumentiert.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Technische Entwicklungsaufgaben -->
+        <div class="row" id="aufgaben">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Technische Entwicklungsaufgaben</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die wesentliche Aufgabe des Projekts besteht nicht in der
+                Entwicklung eines vollständig neuen Motorseglers, sondern in der
+                Entwicklung eines abnehmbaren elektrischen Antriebsmoduls, mit
+                dem sich ein serienmäßiges Segelflugzeug bei Bedarf zusätzlich
+                motorisieren lässt, ohne seine Primärstruktur wesentlich zu
+                verändern.
+              </p>
+              <p>Das Projekt verbindet dabei mehrere Fachgebiete:</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <ul class="chain">
+                <li>Aerodynamik</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>CAD-Konstruktion</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>Strukturauslegung</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>Faserverbundtechnik</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>elektrische Antriebstechnik</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>Klappluftschraube</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>modulare Befestigung</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>Cockpitsteuerung</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>Prototypenbau</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article mt-4">
+              <div class="note prose">
+                <p>
+                  Bei der weiteren Entwicklung sind insbesondere zu
+                  untersuchen: die Lasten aus Schub, Drehmoment und Vibrationen,
+                  die Krafteinleitung in die tragende Flugzeugstruktur, die
+                  Schwerpunktlage, die Kühlung von Akku und Leistungselektronik,
+                  der Brandschutz, die sichere Verriegelung der abnehmbaren
+                  Motorgondel sowie die Ausfallsicherheit der Steuerung.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
+              <p>
+                Das Projekt stellt damit ein modulares elektrisches
+                Zusatzantriebssystem für Segelflugzeuge dar, bei dem die
+                komplette Antriebseinheit in einer typspezifisch ausgelegten,
+                abnehmbaren Faserverbund-Motorgondel integriert ist.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div class="row spacer">
           <div class="col-12 mb-4">
             <hr class="short-line" />
@@ -128,11 +680,21 @@
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span class="close" role="button" tabindex="0" aria-label="Schließen">&times;</span>
-            <img
-              class="modal-image"
-              src="images/segler/konzept.jpeg"
-              alt="Motorsegler"
-            />
+            <div class="grid-container">
+              <div class="grid-item">
+                <a href="#" class="left" aria-label="Vorheriges Bild">&lt;</a>
+              </div>
+              <div class="grid-item">
+                <img
+                  class="modal-image"
+                  src="images/segler/motorsegler-render.jpg"
+                  alt="Motorsegler"
+                />
+              </div>
+              <div class="grid-item">
+                <a href="#" class="right" aria-label="Nächstes Bild">&gt;</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -510,3 +510,43 @@ img {
 .external-note:focus h3 {
   color: orange;
 }
+
+/* ---------------------------------------------------------------
+   Motorsegler: Kette der beteiligten Fachgebiete
+   --------------------------------------------------------------- */
+
+/* Untertitel direkt unter der Hauptueberschrift */
+.lead-sub {
+  margin-top: -0.25rem;
+  margin-bottom: 0;
+  font-size: 1.15rem;
+  color: #6c757d;
+}
+
+.chain {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.chain li {
+  padding: 0.4rem 0.9rem;
+  margin: 0.25rem 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 999px;
+  background-color: #fafafa;
+  font-size: 0.95rem;
+}
+
+/* Pfeile zwischen den Gliedern tragen keine Kontur */
+.chain .chain-arrow {
+  padding: 0 0.35rem;
+  border: none;
+  background: none;
+  color: orange;
+  font-weight: bolder;
+}
