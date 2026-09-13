@@ -70,7 +70,8 @@
         <div class="row">
           <div class="col mt-4">
             <div class="text-center">
-              <h1>Wankelmotor</h1>
+              <h1>Koaxiale Propellerantriebseinheit</h1>
+              <p class="lead-sub">ohne Getriebe &ndash; auf Basis eines Wankel-Flugmotors</p>
               <div class="spacer">
                 <hr class="short-line" />
               </div>
@@ -78,28 +79,43 @@
           </div>
         </div>
 
-        <div class="row h-100 align-items-center">
-          <div class="col-6 h-100">
-            <div class="article text-center mb-4">
-              <h3>OS Wankel Koaxial Rotary Engine (Umlaufmotor) CAD</h3>
-              <h4>
-                Umbau und CAD Explosion eines Wankelmotors zu einem
-                Koaxial-Umplaufmotor.
-              </h4>
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
+              <p>
+                Zwei gegenläufige Propeller auf einer Achse &ndash; angetrieben
+                von Motorwelle und rotierendem Motorgehäuse, ganz ohne
+                Untersetzungsgetriebe.
+              </p>
             </div>
           </div>
-          <div class="col-6">
-            <div class="article">
-              <iframe
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                width="801"
-                height="500"
-                type="text/html"
-                src="https://www.youtube.com/embed/xbYYfZpPhYM?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=1&start=0&end=0&vq=hd1080&origin=https://youtubeembedcode.com"
-              ></iframe>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="article text-center">
+              <img
+                class="image image-equal"
+                src="images/wankel/koaxialantrieb-render.jpg"
+                alt="CAD-Visualisierung der koaxialen Antriebseinheit mit Wankelmotor und zwei gegenläufigen Holzpropellern"
+              />
+              <p class="mt-2">
+                CAD-Visualisierung der Antriebseinheit mit zwei gegenläufigen
+                Propellern
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="article text-center">
+              <img
+                class="image image-equal"
+                src="images/wankel/koaxialantrieb-pruefstand.jpg"
+                alt="Funktionsmodell des koaxialen Wankel-Antriebs mit zwei Propellern auf einem Prüfstand"
+              />
+              <p class="mt-2">
+                Funktionsmodell auf dem Prüfstand: vorderer Propeller an der
+                Motorwelle, hinterer Propeller am Motorgehäuse
+              </p>
             </div>
           </div>
         </div>
@@ -107,6 +123,556 @@
         <div class="row spacer">
           <div class="col-12">
             <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Sprungmarken -->
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <ul class="toc">
+                <li><a href="#charakteristik">Koaxiales System</a></li>
+                <li><a href="#konzept">Konzept</a></li>
+                <li><a href="#cad">CAD-Modell</a></li>
+                <li><a href="#differenzial">Differenzielles Prinzip</a></li>
+                <li><a href="#gyroskop">Gyroskopische Momente</a></li>
+                <li><a href="#blattzahl">Blattzahl</a></li>
+                <li><a href="#vorteile">Vorteile</a></li>
+                <li><a href="#aufgaben">Entwicklungsaufgaben</a></li>
+                <li><a href="#zusammenfassung">Zusammenfassung</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Allgemeine Charakteristik -->
+        <div class="row" id="charakteristik">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Allgemeine Charakteristik des koaxialen Systems</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Eine koaxiale Propellerantriebseinheit besteht aus zwei auf
+                einer gemeinsamen Achse angeordneten Propellern, die sich in
+                entgegengesetzte Richtungen drehen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Vorteile</h4>
+                  <ul>
+                    <li>kompakte Bauweise;</li>
+                    <li>
+                      hohe Schubeffizienz bei begrenztem Propellerdurchmesser;
+                    </li>
+                    <li>
+                      Nutzung der Drallenergie des vom vorderen Propeller
+                      erzeugten Luftstroms durch den hinteren Propeller;
+                    </li>
+                    <li>
+                      Kompensation des Reaktionsmoments und der gyroskopischen
+                      Momente.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Nachteile klassischer Systeme</h4>
+                  <ul>
+                    <li>erhöhter konstruktiver Aufwand;</li>
+                    <li>hohe Anforderungen an die dynamische Auswuchtung;</li>
+                    <li>aerodynamische Wechselwirkung der beiden Propeller;</li>
+                    <li>zusätzliche Vibrationen und Geräusche.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <div class="note prose">
+                <p>
+                  Das vorliegende Projekt verfolgt das Ziel, ein koaxiales
+                  Propellersystem zu entwickeln, bei dem die gegenläufige
+                  Rotation der beiden Propeller ohne herkömmliches
+                  Untersetzungs- bzw. Getriebe realisiert wird.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Konzept der Antriebseinheit -->
+        <div class="row" id="konzept">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Konzept der Antriebseinheit</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>Die Antriebseinheit basiert auf einem Wankel-Flugmotor.</p>
+              <p>
+                Der vordere Propeller ist direkt mit der Exzenterwelle bzw.
+                Abtriebswelle des Motors verbunden und wird von dieser
+                angetrieben.
+              </p>
+              <p>
+                Der hintere Propeller ist mit dem Motorgehäuse verbunden. Das
+                Motorgehäuse ist drehbar um eine Achse gelagert, die mit der
+                Achse der Motorwelle fluchtet, und rotiert in entgegengesetzter
+                Richtung zur Motorwelle.
+              </p>
+              <p>Damit ergibt sich folgende kinematische Zuordnung:</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <ul class="chain">
+                <li>Motorwelle</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>vorderer Propeller</li>
+              </ul>
+              <ul class="chain mt-2">
+                <li>rotierendes Motorgehäuse</li>
+                <li class="chain-arrow" aria-hidden="true">&rarr;</li>
+                <li>hinterer Propeller</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Ein Getriebe zur Erzeugung der gegenläufigen Rotation ist nicht
+                erforderlich.
+              </p>
+              <p>
+                Der Vergaser sowie die für Kraftstoffversorgung und
+                Motorsteuerung erforderlichen Komponenten bleiben gegenüber der
+                Flugzeugstruktur stationär.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- CAD-Modell -->
+        <div class="row" id="cad">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>OS Wankel Koaxial Rotary Engine (Umlaufmotor) CAD</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article text-center">
+              <p>
+                Umbau und CAD-Explosion eines Wankelmotors zu einem
+                Koaxial-Umlaufmotor.
+              </p>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe
+                  class="embed-responsive-item"
+                  frameborder="0"
+                  allowfullscreen
+                  title="OS Wankel Koaxial Rotary Engine CAD"
+                  src="https://www.youtube.com/embed/xbYYfZpPhYM?autoplay=0&fs=1&iv_load_policy=1&showinfo=1&rel=0&cc_load_policy=1&start=0&end=0&vq=hd1080&origin=https://youtubeembedcode.com"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Differenzielles Funktionsprinzip -->
+        <div class="row" id="differenzial">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Differenzielles Funktionsprinzip</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Eine wesentliche Besonderheit des Konzepts besteht darin, dass
+                Motor und beide Propeller zusammen ein differenzielles
+                mechanisches System bilden.
+              </p>
+              <p>
+                Die aerodynamischen Widerstandsmomente des vorderen und hinteren
+                Propellers wirken jeweils auf die Motorwelle bzw. auf das
+                rotierende Motorgehäuse. Das Verhältnis dieser Momente bestimmt
+                die Verteilung der Drehzahlen zwischen den beiden rotierenden
+                Systemen.
+              </p>
+              <p>
+                Im Gegensatz zu einem konventionellen Getriebe existiert somit
+                kein fest vorgegebenes Übersetzungsverhältnis zwischen den
+                beiden Propellern. Die Drehzahlen stellen sich dynamisch
+                entsprechend der jeweiligen aerodynamischen Belastung der beiden
+                Propeller ein.
+              </p>
+              <p>
+                Im stationären Betriebszustand strebt das System einen
+                Momentenausgleich an:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <div class="note text-center">
+                <p class="mb-0"><strong>M&#8321; + M&#8322; &asymp; 0</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Dadurch kann das auf die Flugzeugstruktur übertragene
+                Reaktionsmoment wesentlich reduziert bzw. bei optimalem
+                Momentenausgleich nahezu vollständig kompensiert werden.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Gyroskopische Momente -->
+        <div class="row" id="gyroskop">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Kompensation der gyroskopischen Momente</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Die gegenläufige Rotation der beiden Propeller reduziert den
+                resultierenden Drall bzw. Drehimpuls des Gesamtsystems:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <div class="note text-center">
+                <p class="mb-0">
+                  <strong>H<sub>&Sigma;</sub> = H&#8321; + H&#8322; &asymp; 0</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Bei annähernd gleichen Beträgen der Drehimpulse beider Propeller
+                wird die gyroskopische Wirkung der Antriebseinheit auf das
+                Luftfahrzeug deutlich reduziert.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Blattzahl -->
+        <div class="row" id="blattzahl">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Unterschiedliche Anzahl der Propellerblätter</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Vorgesehen ist die Verwendung von Propellern mit
+                unterschiedlicher Blattzahl, beispielsweise:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Kombination 2 / 3</h4>
+                  <p>
+                    vorderer Propeller: 2 Blätter,<br />
+                    hinterer Propeller: 3 Blätter
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <div class="variant-card prose">
+                  <h4>Kombination 3 / 4</h4>
+                  <p>
+                    vorderer Propeller: 3 Blätter,<br />
+                    hinterer Propeller: 4 Blätter
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Bei gleicher Blattzahl weist die Interaktion der beiden
+                Propeller eine ausgeprägtere periodische Struktur auf. Eine
+                unterschiedliche Blattzahl verändert dieses Interaktionsmuster:
+                Der von einem Blatt des vorderen Propellers erzeugte Nachlauf
+                trifft nacheinander auf unterschiedliche Blätter des hinteren
+                Propellers und nicht bei jedem Umlauf auf dieselben
+                Blattpositionen.
+              </p>
+              <p>
+                Dadurch kann das Auftreten periodischer Lastimpulse, von
+                Vibrationen und tonalen Geräuschanteilen reduziert werden.
+              </p>
+              <p>
+                Die optimale Kombination der Blattzahlen ist durch
+                aerodynamische Berechnungen und experimentelle Untersuchungen zu
+                bestimmen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Vorteile -->
+        <div class="row" id="vorteile">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Wesentliche Vorteile des vorgeschlagenen Konzepts</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>
+                      gegenläufige Rotation zweier koaxialer Propeller ohne
+                      Getriebe;
+                    </li>
+                    <li>Kompensation des Reaktionsmoments;</li>
+                    <li>Reduzierung der gyroskopischen Momente;</li>
+                    <li>
+                      differenzielle Verteilung der Drehzahlen entsprechend der
+                      aerodynamischen Belastung;
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>kompakte Bauweise;</li>
+                    <li>
+                      Möglichkeit einer getrennten Optimierung von Vorder- und
+                      Hinterpropeller hinsichtlich der Blattzahl;
+                    </li>
+                    <li>potenzielle Reduzierung von Geräuschen und Vibrationen;</li>
+                    <li>
+                      effektive Nutzung der Drallenergie des vom vorderen
+                      Propeller erzeugten Nachlaufs.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Entwicklungsaufgaben -->
+        <div class="row" id="aufgaben">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Wesentliche Entwicklungsaufgaben</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Zur technischen Validierung des Konzepts sind insbesondere
+                folgende Untersuchungen erforderlich:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>
+                      Festigkeitsnachweis und dynamische Auswuchtung des
+                      rotierenden Motorgehäuses;
+                    </li>
+                    <li>
+                      Untersuchung der Leistungsverteilung zwischen den beiden
+                      Propellern;
+                    </li>
+                    <li>
+                      Untersuchung der Stabilität des differentiellen
+                      Betriebszustands;
+                    </li>
+                    <li>
+                      Bestimmung des Drehzahlbereichs und des
+                      Drehzahlverhältnisses;
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="article prose">
+                  <ul>
+                    <li>
+                      Optimierung des axialen Abstands zwischen den Propellern;
+                    </li>
+                    <li>Untersuchung verschiedener Blattzahlkombinationen;</li>
+                    <li>
+                      Untersuchung von Schwingungen und akustischen
+                      Eigenschaften;
+                    </li>
+                    <li>
+                      Ermittlung von Schub, Wirkungsgrad und mechanischen
+                      Verlusten.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <!-- Zusammenfassung -->
+        <div class="row" id="zusammenfassung">
+          <div class="col-12">
+            <div class="article text-center mb-4">
+              <h3>Zusammenfassung</h3>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article prose">
+              <p>
+                Das vorgeschlagene Konzept stellt eine getriebelose koaxiale
+                Propellerantriebseinheit mit gegenläufiger Rotation von
+                Motorwelle und Motorgehäuse dar.
+              </p>
+              <p>
+                Das wesentliche Unterscheidungsmerkmal gegenüber konventionellen
+                koaxialen Antriebssystemen besteht darin, dass der hintere
+                Propeller direkt durch das rotierende Motorgehäuse angetrieben
+                wird. Die Verteilung der Drehzahlen zwischen den beiden
+                Propellern entsteht dabei dynamisch aus der aerodynamischen
+                Belastung und dem Momentengleichgewicht des Gesamtsystems.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="article">
+              <div class="note prose">
+                <p>
+                  Damit werden die Funktionen von Antriebsmotor und
+                  Differenzialmechanismus in einem gemeinsamen rotierenden
+                  System zusammengeführt. Das Konzept ist insbesondere für
+                  kompakte Luftfahrzeugantriebe interessant, bei denen eine
+                  Kompensation des Reaktionsmoments und eine Reduzierung der
+                  gyroskopischen Wirkung ohne ein konventionelles Getriebe
+                  angestrebt werden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row spacer">
+          <div class="col-12">
+            <hr class="short-line" />
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" role="button" tabindex="0" aria-label="Schließen">&times;</span>
+            <div class="grid-container">
+              <div class="grid-item">
+                <a href="#" class="left" aria-label="Vorheriges Bild">&lt;</a>
+              </div>
+              <div class="grid-item">
+                <img
+                  class="modal-image"
+                  src="images/wankel/koaxialantrieb-render.jpg"
+                  alt="Koaxiale Propellerantriebseinheit"
+                />
+              </div>
+              <div class="grid-item">
+                <a href="#" class="right" aria-label="Nächstes Bild">&gt;</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

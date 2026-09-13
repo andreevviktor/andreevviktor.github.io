@@ -419,6 +419,16 @@ img {
   object-fit: cover;
 }
 
+/* Bildpaar mit unterschiedlichen Seitenverhaeltnissen auf gleiche Hoehe
+   bringen: gemeinsames Format, Ueberstand wird beschnitten statt verzerrt.
+   Die Lightbox zeigt weiterhin das vollstaendige Bild. */
+.image-equal {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 /* ---------------------------------------------------------------
    Konzeptseite: Fliesstext, Sprungmarken, Hinweise, Variantenkacheln
    --------------------------------------------------------------- */
